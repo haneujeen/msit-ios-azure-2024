@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Turtle Rock",
+        "id": 1001,
+        "isCompleted": true,
+    },
+    {
+        "title": "Silver Salmon Creek",
+        "id": 1002,
+        "isCompleted": false,
+    },
+    {
+        "title": "Chilkoot Trail",
+        "id": 1003,
+        "isCompleted": false,
+    },
+    {
+        "title": "St. Mary Lake",
+        "id": 1004,
+        "isCompleted": true,
+    },
+    {
+        "title": "Twin Lake",
+        "id": 1005,
+        "isCompleted": false,
+    },
+    {
+        "title": "Lake McDonald",
+        "id": 1006,
+        "isCompleted": false,
+    }
+]
