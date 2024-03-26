@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Turtle Rock</string>
+		<key>category</key>
+		<string>Rivers</string>
+		<key>city</key>
+		<string>Twentynine Palms</string>
+		<key>imageName</key>
+		<string>turtlerock</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Silver Salmon Creek</string>
+		<key>category</key>
+		<string>Lakes</string>
+		<key>city</key>
+		<string>Port Alsworth</string>
+		<key>imageName</key>
+		<string>silversalmoncreek</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Chilkoot Trail</string>
+		<key>category</key>
+		<string>Mountains</string>
+		<key>city</key>
+		<string>Skagway</string>
+		<key>imageName</key>
+		<string>chilkoottrail</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>St. Mary Lake</string>
+		<key>category</key>
+		<string>Lakes</string>
+		<key>city</key>
+		<string>Browning</string>
+		<key>imageName</key>
+		<string>stmarylake</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Twin Lake</string>
+		<key>category</key>
+		<string>Lakes</string>
+		<key>city</key>
+		<string>Twin Lakes</string>
+		<key>imageName</key>
+		<string>twinlake</string>
+	</dict>
+</array>
+</plist>
