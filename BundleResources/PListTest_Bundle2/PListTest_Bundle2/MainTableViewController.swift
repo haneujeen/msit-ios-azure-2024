@@ -22,16 +22,9 @@ class MainTableViewController: UITableViewController {
               let source = Bundle.main.url(forResource: "parks.plist", withExtension: nil)
         else { fatalError() }
         
-        copyFile(at: source, to: destination)
+        try? FileManager.default.copyItem(at: source, to: destination)
         
         parks = try? NSMutableArray(contentsOf: destination, error: ())
-    }
-    
-    func copyFile(at source: URL, to destination: URL) {
-        guard !FileManager.default.fileExists(atPath: destination.path()) else {
-            return
-        }
-        try? FileManager.default.copyItem(at: source, to: destination)
     }
     
     func urlWithFilename(_ filename: String) -> URL? {
