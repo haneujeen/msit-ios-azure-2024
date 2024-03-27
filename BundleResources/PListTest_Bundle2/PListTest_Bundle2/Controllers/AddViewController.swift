@@ -20,13 +20,20 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: Any) {
-        let newPark = ["name": textFieldName.text!,
-                       "category": textFieldCategory.text!,
-                       "city": textFieldCity.text!,
-                       "imageName": textFieldName.text!.lowercased()]
+        guard let name = textFieldName.text,
+              let category = textFieldCategory.text,
+              let city = textFieldCity.text
+        else { return }
+        let newPark = ["name": name,
+                       "category": category,
+                       "city": city,
+                       "imageName": name.replacingOccurrences(of: " ", with: "").lowercased()]
         parks?.add(newPark)
         guard let url = urlWithFilename("parks.plist") else { return }
         try? parks?.write(to: url)
+        
+        // segue
+        _ = navigationController?.popViewController(animated: true)
     }
     
     /*

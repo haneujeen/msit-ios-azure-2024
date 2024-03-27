@@ -27,6 +27,12 @@ class MainTableViewController: UITableViewController {
         parks = try? NSMutableArray(contentsOf: destination, error: ())
     }
     
+    @IBAction func unwindFromAddViewController(seque: UIStoryboardSegue) {
+        guard let parks else { return }
+        let indexPath = IndexPath(row: parks.count - 1, section: 0)
+        tableView.insertRows(at: [indexPath], with: .fade)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,11 +69,11 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if indexPath.row % 2 == 0 {
+        if indexPath.row == 0 {
             return .insert
-        } else {
-            return .delete
         }
+        return .delete
+        
     }
 
     // Override to support editing the table view.
@@ -86,7 +92,7 @@ class MainTableViewController: UITableViewController {
                            "city": "Errol",
                            "imageName": "umbagog"]
             parks?.insert(newPark, at: indexPath.row)
-            tableView.insertRows(at: [indexPath], with: .left)
+            tableView.insertRows(at: [indexPath], with: .fade)
         }
     }
 
