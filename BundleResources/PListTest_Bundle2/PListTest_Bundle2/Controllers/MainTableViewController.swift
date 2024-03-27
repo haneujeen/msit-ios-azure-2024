@@ -27,19 +27,6 @@ class MainTableViewController: UITableViewController {
         parks = try? NSMutableArray(contentsOf: destination, error: ())
     }
     
-    func urlWithFilename(_ filename: String) -> URL? {
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        /*
-         file:///Users/haneujeen/Library/Developer/CoreSimulator/Devices/80A56BAF-76DB-4DE6-8D97-CA6B58984D13/data/Containers/Data/Application/CA9FC0A6-B045-43B8-8A7C-9B5C04BF0F73/Documents/
-         */
-        let fileURL = url.appendingPathComponent(filename, conformingTo: .propertyList)
-        print(fileURL)
-        /*
-         file:///Users/haneujeen/Library/Developer/CoreSimulator/Devices/80A56BAF-76DB-4DE6-8D97-CA6B58984D13/data/Containers/Data/Application/47B1F336-C350-494F-869D-43811C3E3285/Documents/parks.plist
-         */
-        return fileURL
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,6 +61,14 @@ class MainTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.row % 2 == 0 {
+            return .insert
+        } else {
+            return .delete
+        }
+    }
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -83,11 +78,16 @@ class MainTableViewController: UITableViewController {
             if let url = urlWithFilename("parks.plist") {
                 try? parks?.write(to: url)
             }
-           
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let newPark = ["name": "Lake Umbagog",
+                           "category": "Lakes",
+                           "city": "Errol",
+                           "imageName": "umbagog"]
+            parks?.insert(newPark, at: indexPath.row)
+            tableView.insertRows(at: [indexPath], with: .left)
+        }
     }
 
     // Override to support rearranging the table view.
@@ -106,14 +106,22 @@ class MainTableViewController: UITableViewController {
         return true
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "detail" {
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            let detailView = segue.destination as? DetailViewController
+            guard let park = parks?[indexPath.row] as? [String:String] else {
+                return
+            }
+            detailView?.park = park
+        } else {
+            let addView = segue.destination as? AddViewController
+            addView?.parks = self.parks
+        }
     }
-    */
-
 }

@@ -13,6 +13,9 @@
 		4E3D1A542BB28FAF007A1FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D1A532BB28FAF007A1FF6 /* Assets.xcassets */; };
 		4E3D1A5F2BB28FEC007A1FF6 /* parks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D1A5E2BB28FEC007A1FF6 /* parks.plist */; };
 		4E3D1A612BB292D9007A1FF6 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D1A602BB292D9007A1FF6 /* MainTableViewController.swift */; };
+		4EDDCD952BB3A5BC0004096E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDCD942BB3A5BC0004096E /* DetailViewController.swift */; };
+		4EDDCD982BB3A5D80004096E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDCD972BB3A5D80004096E /* AddViewController.swift */; };
+		4EDDCD9D2BB3BF360004096E /* UIViewController+URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDCD9C2BB3BF360004096E /* UIViewController+URLUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4E3D1A582BB28FAF007A1FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3D1A5E2BB28FEC007A1FF6 /* parks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parks.plist; sourceTree = "<group>"; };
 		4E3D1A602BB292D9007A1FF6 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		4EDDCD942BB3A5BC0004096E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4EDDCD972BB3A5D80004096E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		4EDDCD9C2BB3BF360004096E /* UIViewController+URLUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+URLUtilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		4E3D1A492BB28FAD007A1FF6 /* PListTest_Bundle2 */ = {
 			isa = PBXGroup;
 			children = (
-				4E3D1A4A2BB28FAD007A1FF6 /* AppDelegate.swift */,
-				4E3D1A4C2BB28FAD007A1FF6 /* SceneDelegate.swift */,
-				4E3D1A602BB292D9007A1FF6 /* MainTableViewController.swift */,
+				4EDDCD992BB3A9D60004096E /* Delegates */,
+				4EDDCD962BB3A5C10004096E /* Controllers */,
+				4EDDCD9C2BB3BF360004096E /* UIViewController+URLUtilities.swift */,
 				4E3D1A502BB28FAD007A1FF6 /* Main.storyboard */,
 				4E3D1A532BB28FAF007A1FF6 /* Assets.xcassets */,
 				4E3D1A582BB28FAF007A1FF6 /* Info.plist */,
 				4E3D1A5E2BB28FEC007A1FF6 /* parks.plist */,
 			);
 			path = PListTest_Bundle2;
+			sourceTree = "<group>";
+		};
+		4EDDCD962BB3A5C10004096E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E3D1A602BB292D9007A1FF6 /* MainTableViewController.swift */,
+				4EDDCD942BB3A5BC0004096E /* DetailViewController.swift */,
+				4EDDCD972BB3A5D80004096E /* AddViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4EDDCD992BB3A9D60004096E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4E3D1A4A2BB28FAD007A1FF6 /* AppDelegate.swift */,
+				4E3D1A4C2BB28FAD007A1FF6 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDDCD982BB3A5D80004096E /* AddViewController.swift in Sources */,
+				4EDDCD9D2BB3BF360004096E /* UIViewController+URLUtilities.swift in Sources */,
 				4E3D1A4B2BB28FAD007A1FF6 /* AppDelegate.swift in Sources */,
 				4E3D1A612BB292D9007A1FF6 /* MainTableViewController.swift in Sources */,
 				4E3D1A4D2BB28FAD007A1FF6 /* SceneDelegate.swift in Sources */,
+				4EDDCD952BB3A5BC0004096E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
