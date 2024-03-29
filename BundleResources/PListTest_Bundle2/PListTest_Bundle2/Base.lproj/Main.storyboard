@@ -121,22 +121,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-f9-u1L">
-                                <rect key="frame" x="96" y="487" width="65" height="35"/>
+                                <rect key="frame" x="233" y="487" width="65" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save"/>
                                 <connections>
                                     <action selector="add:" destination="CnF-nH-01a" eventType="touchUpInside" id="y7d-Hd-hi3"/>
+                                    <segue destination="eZg-wU-OIe" kind="unwind" unwindAction="unwindFromAddViewControllerWithSeque:" id="flJ-be-qMR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uI-G0-9RN">
-                                <rect key="frame" x="232" y="487" width="65" height="35"/>
+                                <rect key="frame" x="100" y="487" width="55" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Done"/>
-                                <connections>
-                                    <segue destination="eZg-wU-OIe" kind="unwind" unwindAction="unwindFromAddViewControllerWithSeque:" id="BBM-B9-YLh"/>
-                                </connections>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2da-Ng-HTH"/>
@@ -152,7 +150,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKA-15-pJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eZg-wU-OIe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="24"/>
+            <point key="canvasLocation" x="1359.5419847328244" y="23.943661971830988"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ghd-nb-apq">

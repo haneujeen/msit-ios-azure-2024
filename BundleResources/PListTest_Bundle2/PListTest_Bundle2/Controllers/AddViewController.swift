@@ -33,7 +33,6 @@ class AddViewController: UIViewController {
         try? parks?.write(to: url)
         
         // segue
-        _ = navigationController?.popViewController(animated: true)
     }
     
     /*
