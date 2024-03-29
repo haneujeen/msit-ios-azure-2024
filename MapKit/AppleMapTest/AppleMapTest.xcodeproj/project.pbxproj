@@ -12,6 +12,8 @@
 		4E253F712BB6498800605F15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E253F702BB6498800605F15 /* ViewController.swift */; };
 		4E253F742BB6498800605F15 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E253F732BB6498800605F15 /* Base */; };
 		4E253F762BB6498A00605F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E253F752BB6498A00605F15 /* Assets.xcassets */; };
+		4E253F812BB6548200605F15 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E253F802BB6548200605F15 /* MyAnnotation.swift */; };
+		4E253F832BB667F200605F15 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E253F822BB667F200605F15 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4E253F732BB6498800605F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E253F752BB6498A00605F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E253F7A2BB6498A00605F15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E253F802BB6548200605F15 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		4E253F822BB667F200605F15 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		4E253F6B2BB6498800605F15 /* AppleMapTest */ = {
 			isa = PBXGroup;
 			children = (
+				4E253F842BB6851C00605F15 /* Controllers */,
 				4E253F6C2BB6498800605F15 /* AppDelegate.swift */,
 				4E253F6E2BB6498800605F15 /* SceneDelegate.swift */,
-				4E253F702BB6498800605F15 /* ViewController.swift */,
+				4E253F802BB6548200605F15 /* MyAnnotation.swift */,
 				4E253F722BB6498800605F15 /* Main.storyboard */,
 				4E253F752BB6498A00605F15 /* Assets.xcassets */,
 				4E253F7A2BB6498A00605F15 /* Info.plist */,
 			);
 			path = AppleMapTest;
+			sourceTree = "<group>";
+		};
+		4E253F842BB6851C00605F15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E253F702BB6498800605F15 /* ViewController.swift */,
+				4E253F822BB667F200605F15 /* WebViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +150,8 @@
 			files = (
 				4E253F712BB6498800605F15 /* ViewController.swift in Sources */,
 				4E253F6D2BB6498800605F15 /* AppDelegate.swift in Sources */,
+				4E253F812BB6548200605F15 /* MyAnnotation.swift in Sources */,
+				4E253F832BB667F200605F15 /* WebViewController.swift in Sources */,
 				4E253F6F2BB6498800605F15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
