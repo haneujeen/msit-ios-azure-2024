@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import PhotosUI
 
 class ViewController: UIViewController {
     let camera = UIImagePickerController()
+    var picker: PHPickerViewController?
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -16,18 +18,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         camera.sourceType = .camera
         camera.delegate = self
+        
+        var config = PHPickerConfiguration()
+        config.selectionLimit = 1
+        config.filter = .images
+        
+        picker = PHPickerViewController(configuration: config)
+        picker?.delegate = self
     }
 
     @IBAction func showActions(_ sender: Any) {
         let sheet = UIAlertController(title: "Actions", message: "", preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
             self.present(self.camera, animated: true)
         }
+        let pickerAction = UIAlertAction(title: "Album", style: .default) { _ in
+            self.present(self.picker!, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-        sheet.addAction(cancelAction)
         sheet.addAction(cameraAction)
+        sheet.addAction(pickerAction)
+        sheet.addAction(cancelAction)
         present(sheet, animated: true)
     }
 }
@@ -38,5 +51,20 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             imageView.image = image
         }
         dismiss(animated: true)
+    }
+}
+
+extension ViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        guard let provider = results.first?.itemProvider, provider.canLoadObject(ofClass: UIImage.self) else { return }
+        
+        provider.loadObject(ofClass: UIImage.self) { result, error in
+            if let image = result as? UIImage {
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+        picker.dismiss(animated: true)
     }
 }
