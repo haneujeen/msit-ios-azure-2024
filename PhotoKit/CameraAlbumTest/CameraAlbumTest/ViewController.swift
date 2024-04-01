@@ -25,6 +25,13 @@ class ViewController: UIViewController {
         
         picker = PHPickerViewController(configuration: config)
         picker?.delegate = self
+        
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue("MyValue", forKey: "myKey")
+        userDefaults.setValue(10, forKey: "myInt")
+        
+        let myValue = userDefaults.string(forKey: "myKey")
+        let myInt = userDefaults.integer(forKey: "myInt")
     }
 
     @IBAction func showActions(_ sender: Any) {
@@ -42,6 +49,19 @@ class ViewController: UIViewController {
         sheet.addAction(pickerAction)
         sheet.addAction(cancelAction)
         present(sheet, animated: true)
+    }
+    
+    @IBAction func saveImage(_ sender: Any) {
+        guard
+            let image = imageView.image,
+            let data = image.jpegData(compressionQuality: 0.8)
+        else { return }
+        
+        do {
+            try data.write(to: urlWithFilename("flower", type: .png))
+        } catch {
+            print(error) // Alert
+        }
     }
 }
 

@@ -12,6 +12,7 @@
 		4E24130B2BBA361A00E8CA6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24130A2BBA361A00E8CA6D /* ViewController.swift */; };
 		4E24130E2BBA361A00E8CA6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E24130D2BBA361A00E8CA6D /* Base */; };
 		4E2413102BBA361B00E8CA6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E24130F2BBA361B00E8CA6D /* Assets.xcassets */; };
+		4E2413232BBA4AEA00E8CA6D /* UIViewController+URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2413222BBA4AEA00E8CA6D /* UIViewController+URLUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4E24130D2BBA361A00E8CA6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E24130F2BBA361B00E8CA6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E2413142BBA361B00E8CA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E2413222BBA4AEA00E8CA6D /* UIViewController+URLUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+URLUtilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4E24130C2BBA361A00E8CA6D /* Main.storyboard */,
 				4E24130F2BBA361B00E8CA6D /* Assets.xcassets */,
 				4E2413142BBA361B00E8CA6D /* Info.plist */,
+				4E2413222BBA4AEA00E8CA6D /* UIViewController+URLUtilities.swift */,
 			);
 			path = CameraAlbumTest;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E24130B2BBA361A00E8CA6D /* ViewController.swift in Sources */,
+				4E2413232BBA4AEA00E8CA6D /* UIViewController+URLUtilities.swift in Sources */,
 				4E2413072BBA361A00E8CA6D /* AppDelegate.swift in Sources */,
 				4E2413092BBA361A00E8CA6D /* SceneDelegate.swift in Sources */,
 			);
