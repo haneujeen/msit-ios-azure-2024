@@ -10,6 +10,9 @@
 		4E2413552BBB9C3900E8CA6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2413542BBB9C3900E8CA6D /* AppDelegate.swift */; };
 		4E2413572BBB9C3900E8CA6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2413562BBB9C3900E8CA6D /* SceneDelegate.swift */; };
 		4E24135C2BBB9C3900E8CA6D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E24135B2BBB9C3900E8CA6D /* Base */; };
+		4E2413702BBBC79F00E8CA6D /* BookNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24136E2BBBC79F00E8CA6D /* BookNib.swift */; };
+		4E2413712BBBC79F00E8CA6D /* BookNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E24136F2BBBC79F00E8CA6D /* BookNib.xib */; };
+		4E66944F2BBBD97700515E68 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66944E2BBBD97700515E68 /* BooksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +21,9 @@
 		4E2413562BBB9C3900E8CA6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4E24135B2BBB9C3900E8CA6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E2413622BBB9C3B00E8CA6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E24136E2BBBC79F00E8CA6D /* BookNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNib.swift; sourceTree = "<group>"; };
+		4E24136F2BBBC79F00E8CA6D /* BookNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNib.xib; sourceTree = "<group>"; };
+		4E66944E2BBBD97700515E68 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +58,11 @@
 			children = (
 				4E2413542BBB9C3900E8CA6D /* AppDelegate.swift */,
 				4E2413562BBB9C3900E8CA6D /* SceneDelegate.swift */,
+				4E66944E2BBBD97700515E68 /* BooksTableViewController.swift */,
 				4E24135A2BBB9C3900E8CA6D /* Main.storyboard */,
 				4E2413622BBB9C3B00E8CA6D /* Info.plist */,
+				4E24136E2BBBC79F00E8CA6D /* BookNib.swift */,
+				4E24136F2BBBC79F00E8CA6D /* BookNib.xib */,
 			);
 			path = KakaoAPITest;
 			sourceTree = "<group>";
@@ -117,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E24135C2BBB9C3900E8CA6D /* Base in Resources */,
+				4E2413712BBBC79F00E8CA6D /* BookNib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2413702BBBC79F00E8CA6D /* BookNib.swift in Sources */,
 				4E2413552BBB9C3900E8CA6D /* AppDelegate.swift in Sources */,
+				4E66944F2BBBD97700515E68 /* BooksTableViewController.swift in Sources */,
 				4E2413572BBB9C3900E8CA6D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
