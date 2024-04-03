@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class BooksTableViewController: UITableViewController {
     let apiKey = "KakaoAK ec21690271bdc78663d5780d97cae11d"
@@ -72,6 +73,7 @@ class BooksTableViewController: UITableViewController {
         let authorsLabel = cell.viewWithTag(3) as? UILabel
         let priceLabel = cell.viewWithTag(4) as? UILabel
         
+        imageView?.kf.setImage(with: URL(string: (book?.thumbnail)!))
         headLabel?.text = book?.title
         authorsLabel?.text = book?.authors.joined(separator: ", ")
         priceLabel?.text = "\((book?.price)!)"
