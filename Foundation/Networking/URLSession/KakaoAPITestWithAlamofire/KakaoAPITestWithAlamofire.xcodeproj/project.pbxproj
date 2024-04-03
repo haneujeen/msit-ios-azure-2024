@@ -13,6 +13,8 @@
 		4E6694902BBCDF2600515E68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E66948F2BBCDF2600515E68 /* Assets.xcassets */; };
 		4E66949C2BBCDF9D00515E68 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66949B2BBCDF9D00515E68 /* Alamofire */; };
 		4E66949E2BBCDF9D00515E68 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66949D2BBCDF9D00515E68 /* AlamofireDynamic */; };
+		4E6694C02BBCE09D00515E68 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */; };
+		4E6694C22BBCE37900515E68 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694C12BBCE37900515E68 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4E66948D2BBCDF2400515E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E66948F2BBCDF2600515E68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E6694942BBCDF2600515E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
+		4E6694C12BBCE37900515E68 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +60,23 @@
 		4E6694852BBCDF2400515E68 /* KakaoAPITestWithAlamofire */ = {
 			isa = PBXGroup;
 			children = (
+				4E6694C32BBCE37E00515E68 /* Models */,
 				4E6694862BBCDF2400515E68 /* AppDelegate.swift */,
 				4E6694882BBCDF2400515E68 /* SceneDelegate.swift */,
+				4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */,
 				4E66948C2BBCDF2400515E68 /* Main.storyboard */,
 				4E66948F2BBCDF2600515E68 /* Assets.xcassets */,
 				4E6694942BBCDF2600515E68 /* Info.plist */,
 			);
 			path = KakaoAPITestWithAlamofire;
+			sourceTree = "<group>";
+		};
+		4E6694C32BBCE37E00515E68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E6694C12BBCE37900515E68 /* Book.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6694C22BBCE37900515E68 /* Book.swift in Sources */,
 				4E6694872BBCDF2400515E68 /* AppDelegate.swift in Sources */,
 				4E6694892BBCDF2400515E68 /* SceneDelegate.swift in Sources */,
+				4E6694C02BBCE09D00515E68 /* BooksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
