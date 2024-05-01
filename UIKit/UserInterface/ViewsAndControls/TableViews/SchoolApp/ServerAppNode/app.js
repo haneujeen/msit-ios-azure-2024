@@ -1,59 +1,14 @@
-const mysql = require('mysql2')
-const connection = mysql.createConnection({
-    host: "127.0.0.1",
-    user: "root",
-    password: "12345678",
-    database: "school"
-})
 const express = require("express")
 const morgan = require('morgan')
 const app = express()
+const studentRouter = require("./routes/student")
+const bookRouter = require("./routes/book")
+
 app.use(morgan("dev"))
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-
-app.get("/student", (req, res) => {
-    let sql = "SELECT * FROM student"
-    if (req.query.id) {
-        sql = `SELECT * FROM student WHERE id = ${req.query.id}`
-    } else if (req.query.major) {
-        sql = `SELECT * FROM student WHERE major LIKE "${req.query.major}%"`
-    }
-
-    connection.query(sql, (err, result) => {
-        if (err) {
-            res.json({ success: false, documents: [{}], message: err.message })
-        } else {
-            res.json({ success: true, documents: result, message: "Success" })
-        }
-    })
-})
-
-app.post("/student", (req, res) => {
-    const sql = "INSERT INTO student(id, name, gender, grade) VALUES (?, ?, ?, ?)"
-    const params = [req.body.id, req.body.name, req.body.gender, req.body.grade]
-
-    connection.query(sql, params, (err, _) => {
-        if (err) {
-            res.json({ success: false, documents: [{}], message: err.message })
-        } else {
-            res.json({ success: true, documents: [{}], message: "Success" })
-        }
-    })
-})
-
-app.put("/student/:id", (req, res) => {
-    const sql = "UPDATE student SET major = ? WHERE id = ?"
-    const params = [req.body.major, req.params.id]
-
-    connection.query(sql, params, (err, _) => {
-        if (err) {
-            res.json({ success: false, documents: [{}], message: err.message })
-        } else {
-            res.json({ success: false, documents: [{}], message: "Success" })
-        }
-    })
-})
+app.use(express.json()) // req.body = Raw JSON
+app.use(express.urlencoded({extended: true})) // req.body = Form urlencoded 
+app.use("/student", studentRouter)
+app.use("/book", bookRouter)
 
 app.listen(3000, () => {
     console.log("Listening on port 3000")
