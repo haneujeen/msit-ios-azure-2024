@@ -6,18 +6,17 @@ const connection = mysql.createConnection({
     database: "school"
 })
 const express = require("express")
+const morgan = require('morgan')
 const app = express()
+app.use(morgan("dev"))
 
-connection.connect()
-
-app.use((_, res) => {
+app.get("/student", (req, res) => {
     connection.query("SELECT * FROM student", (err, result) => {
         if (err) {
-            console.log(err)
-            throw err
+            res.json({ success: false, documents: [{}], message: err.message })
+        } else {
+            res.json({ success: true, documents: result, message: "Success" })
         }
-        console.log("Result: ", result)
-        res.json(result)
     })
 })
 
