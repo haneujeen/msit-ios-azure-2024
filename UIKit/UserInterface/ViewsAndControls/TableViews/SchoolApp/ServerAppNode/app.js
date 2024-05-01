@@ -30,14 +30,27 @@ app.get("/student", (req, res) => {
 })
 
 app.post("/student", (req, res) => {
-    const sql = `INSERT INTO student(id, name, gender, grade) VALUES (?, ?, ?, ?)`
+    const sql = "INSERT INTO student(id, name, gender, grade) VALUES (?, ?, ?, ?)"
     const params = [req.body.id, req.body.name, req.body.gender, req.body.grade]
 
     connection.query(sql, params, (err, _) => {
         if (err) {
             res.json({ success: false, documents: [{}], message: err.message })
         } else {
-            res.json({ success: true, documents: [req.body], message: "Success" })
+            res.json({ success: true, documents: [{}], message: "Success" })
+        }
+    })
+})
+
+app.put("/student/:id", (req, res) => {
+    const sql = "UPDATE student SET major = ? WHERE id = ?"
+    const params = [req.body.major, req.params.id]
+
+    connection.query(sql, params, (err, _) => {
+        if (err) {
+            res.json({ success: false, documents: [{}], message: err.message })
+        } else {
+            res.json({ success: false, documents: [{}], message: "Success" })
         }
     })
 })
