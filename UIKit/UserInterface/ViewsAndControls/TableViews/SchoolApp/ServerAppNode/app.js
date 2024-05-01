@@ -8,4 +8,12 @@ const connection = mysql.createConnection({
 
 connection.connect()
 
+connection.query("SELECT * FROM student", (err, result) => {
+    if (err) {
+        console.log(err)
+        throw error
+    }
+    console.log("Result: ", result)
+})
+
 connection.end()
