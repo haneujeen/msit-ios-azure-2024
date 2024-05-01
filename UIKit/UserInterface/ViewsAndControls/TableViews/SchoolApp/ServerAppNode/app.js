@@ -5,15 +5,22 @@ const connection = mysql.createConnection({
     password: "12345678",
     database: "school"
 })
+const express = require("express")
+const app = express()
 
 connection.connect()
 
-connection.query("SELECT * FROM student", (err, result) => {
-    if (err) {
-        console.log(err)
-        throw error
-    }
-    console.log("Result: ", result)
+app.use((_, res) => {
+    connection.query("SELECT * FROM student", (err, result) => {
+        if (err) {
+            console.log(err)
+            throw err
+        }
+        console.log("Result: ", result)
+        res.json(result)
+    })
 })
 
-connection.end()
+app.listen(3000, () => {
+    console.log("Listening on port 3000")
+})
