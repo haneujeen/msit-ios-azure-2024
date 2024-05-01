@@ -11,7 +11,14 @@ const app = express()
 app.use(morgan("dev"))
 
 app.get("/student", (req, res) => {
-    connection.query("SELECT * FROM student", (err, result) => {
+    let sql = "SELECT * FROM student"
+    if (req.query.id) {
+        sql = `SELECT * FROM student WHERE id = ${req.query.id}`
+    } else if (req.query.major) {
+        sql = `SELECT * FROM student WHERE major LIKE "${req.query.major}%"`
+    }
+
+    connection.query(sql, (err, result) => {
         if (err) {
             res.json({ success: false, documents: [{}], message: err.message })
         } else {
