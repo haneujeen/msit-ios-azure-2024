@@ -20,7 +20,7 @@ class Car extends Sequelize.Model {
             //         model: 'student',
             //         key: 'id',
             //     }
-            // },
+            // }
         },
         {
             sequelize,

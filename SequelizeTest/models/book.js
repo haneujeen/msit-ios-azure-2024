@@ -23,7 +23,7 @@ class Book extends Sequelize.Model {
             //         model: 'student',
             //         key: 'id',
             //     }
-            // },
+            // }
         },
         {
             sequelize,
