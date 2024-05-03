@@ -11,6 +11,18 @@ let sequelize = new Sequelize(
   config
 )
 
+const User = require('user')
+const Post = require('post')
+
+db.User = User
+db.Post = Post
+
+User.init(sequelize)
+Post.init(sequelize)
+
+User.associate(db)
+Post.associate(db)
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

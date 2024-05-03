@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-class User extends Sequelize.Model {
+class Post extends Sequelize.Model {
     static init(sequelize) {
         return super.init(
             {
@@ -9,12 +9,8 @@ class User extends Sequelize.Model {
                     allowNull: false,
                     unique: true
                 },
-                userName: {
-                    type: Sequelize.STRING(30),
-                    allowNull: false
-                },
-                password: {
-                    type: Sequelize.STRING(50),
+                content: {
+                    type: Sequelize.TEXT,
                     allowNull: false
                 }
             }, 
@@ -22,15 +18,15 @@ class User extends Sequelize.Model {
                 sequelize, 
                 timestamps: true, 
                 paranoid: true, 
-                modelName: 'User', 
-                tableName: 'user' 
+                modelName: 'Post', 
+                tableName: 'post' 
             }
         )
     }
 
     static associate(db) {
-        db.User.hasMany(db.Post, { foreignKey: 'userId', sourceKey: 'userId' })
+        db.belongsTo(db.User, { foreignKey: 'userId', targetKey: 'userId' })
     }
 }
 
-module.exports = User
+module.exports = Post
