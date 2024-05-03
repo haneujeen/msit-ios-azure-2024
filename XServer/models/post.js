@@ -6,8 +6,7 @@ class Post extends Sequelize.Model {
             {
                 userId: {
                     type: Sequelize.STRING(30),
-                    allowNull: false,
-                    unique: true
+                    allowNull: false
                 },
                 content: {
                     type: Sequelize.TEXT,
@@ -25,7 +24,7 @@ class Post extends Sequelize.Model {
     }
 
     static associate(db) {
-        db.belongsTo(db.User, { foreignKey: 'userId', targetKey: 'userId' })
+        db.Post.belongsTo(db.User, { foreignKey: 'userId', targetKey: 'userId' })
     }
 }
 
