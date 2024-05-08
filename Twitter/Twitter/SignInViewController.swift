@@ -33,7 +33,10 @@ class SignInViewController: UIViewController {
                        switch response.result {
                        case .success(let root):
                            if root.success {
-                               print(root.token!)
+                               UserDefaults.standard.setValue(root.token!, forKey: "token")
+                               UserDefaults.standard.setValue(root.user?.userId, forKey: "userid")
+                               UserDefaults.standard.setValue(root.user?.userName, forKey: "username")
+                               self.tabBarController?.selectedIndex = 0
                            } else {
                                self.showAlertWithSingleAction(message: root.message)
                            }

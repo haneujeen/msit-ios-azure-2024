@@ -19,6 +19,7 @@
 		4E8B45132BEB542A00AE1A42 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B45122BEB542A00AE1A42 /* Model.swift */; };
 		4E8B45152BEB558500AE1A42 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B45142BEB558500AE1A42 /* UIViewController+.swift */; };
 		4E8B45172BEB591A00AE1A42 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B45162BEB591A00AE1A42 /* SignInViewController.swift */; };
+		4E8B45192BEB6BE700AE1A42 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B45182BEB6BE700AE1A42 /* PostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4E8B45122BEB542A00AE1A42 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4E8B45142BEB558500AE1A42 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		4E8B45162BEB591A00AE1A42 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4E8B45182BEB6BE700AE1A42 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4E6322682BEB1DBF00DFC1F2 /* Info.plist */,
 				4E8B45062BEB21EC00AE1A42 /* SignUpViewController.swift */,
 				4E8B45162BEB591A00AE1A42 /* SignInViewController.swift */,
+				4E8B45182BEB6BE700AE1A42 /* PostsViewController.swift */,
 				4E8B45122BEB542A00AE1A42 /* Model.swift */,
 				4E8B45142BEB558500AE1A42 /* UIViewController+.swift */,
 			);
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8B45192BEB6BE700AE1A42 /* PostsViewController.swift in Sources */,
 				4E8B45152BEB558500AE1A42 /* UIViewController+.swift in Sources */,
 				4E8B45072BEB21EC00AE1A42 /* SignUpViewController.swift in Sources */,
 				4E8B45172BEB591A00AE1A42 /* SignInViewController.swift in Sources */,

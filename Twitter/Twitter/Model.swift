@@ -27,3 +27,15 @@ struct Token: Codable {
     let user: User?
     let message: String
 }
+
+// Post model
+struct Post: Codable {
+    let userId: String
+    let content: String
+}
+
+struct PostRoot: Codable {
+    let success: Bool
+    let documents: [Post]
+    let message: String
+}
