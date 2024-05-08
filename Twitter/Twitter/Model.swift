@@ -7,6 +7,7 @@
 
 import Foundation
 
+// User model
 struct User: Codable {
     let userId: String
     let userName: String
@@ -19,8 +20,10 @@ struct UserRoot: Codable {
     let message: String
 }
 
+// Token model
 struct Token: Codable {
     let success: Bool
     let token: String?
+    let user: User?
     let message: String
 }
