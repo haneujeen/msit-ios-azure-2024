@@ -29,7 +29,7 @@ router.post('/add', async (req, res) => {
 
     try {
         const result = await Post.create(post);
-        res.json({ success: true, documents: result, message: "Success" })
+        res.json({ success: true, documents: [result], message: "Success" })
     } catch (err) {
         res.json({ success: false, documents: [], message: err.message })
     }

@@ -3,17 +3,21 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { User } = require('../models/index')
 const router = express.Router()
-const secret = process.env.JWT_SECRET
+const salt = process.env.JWT_SECRET
 
-const hash = async (password, saltRound) => {
+const hashPassword = async (password, saltRound) => {
     let hashed = await bcrypt.hash(password, saltRound)
     console.log(hashed)
     return hashed
 }
 
+const upload = require('./upload')
+router.post('/sign-up', upload.single('image'))
+
 router.post('/sign-up', async (req, res) => {
     const user = req.body
-    user.password = await hash(user.password, 10)
+    user.fileName = req.fileName
+    user.password = await hashPassword(user.password, 10)
     try {
         const result = await User.create(user)
         res.json({ success: true, documents: result, message: "Success" })
