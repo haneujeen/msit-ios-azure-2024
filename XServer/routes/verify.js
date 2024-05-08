@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const secret = process.env.JWT_SECRET
+const salt = process.env.JWT_SECRET
 
 const isVerified = async (req, res, next) => {
     const auth = req.get('Authorization')
@@ -8,7 +8,7 @@ const isVerified = async (req, res, next) => {
     }
 
     const token = auth.split(' ')[1]
-    jwt.verify(token, secret, (err, decoded) => {
+    jwt.verify(token, salt, (err, decoded) => {
         if (err) {
             res.json({ success: false, message: "Invalid token" })
         } else {
