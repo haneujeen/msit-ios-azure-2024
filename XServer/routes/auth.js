@@ -29,15 +29,22 @@ router.post('/sign-up', async (req, res) => {
 router.post('/sign-in', async (req, res) => {
     const { userId, password } = req.body
     const options = {
-        attributes: ['password'],
+        attributes: ['userId', 'userName', 'password', 'fileName'],
         where: { userId: userId }
     }
     const user = await User.findOne(options)
     if (!user) { res.json({ success: false, message: "Not found" }) }
 
     if (bcrypt.compare(password, user.password)) {
-        const token = jwt.sign({ uid: userId, rol: 'admin' }, secret)
-        res.json({ success: true, token: token, message: "Success" })
+        const token = jwt.sign({ uid: userId, rol: 'admin' }, salt)
+        res.json({ success: true, 
+            token: token, 
+            user: {
+                userId,
+                "userName": user.userName,
+                "fileName": user.fileName
+            }, 
+            message: "Success" })
     } else { 
         res.json({ success: false, message: "Invalid" })
     }

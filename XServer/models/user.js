@@ -16,6 +16,10 @@ class User extends Sequelize.Model {
                 password: {
                     type: Sequelize.STRING(100),
                     allowNull: false
+                },
+                fileName: {
+                    type: Sequelize.STRING(100),
+                    allowNull: false
                 }
             }, 
             { 
