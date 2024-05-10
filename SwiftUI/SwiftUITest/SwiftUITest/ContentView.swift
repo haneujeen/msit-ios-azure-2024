@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var framework = "Hello, UIKit"
+    @State var framework = "Hello, UIKit"
     var body: some View {
         VStack {
             Text(framework)
