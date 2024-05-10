@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    var framework = "Hello, UIKit"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(framework)
+                .font(.title)
+            Button(action: {
+                framework = "Hello, SwiftUI"
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
         }
-        .padding()
     }
 }
 
