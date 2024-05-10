@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct StateTest: View {
+    @State var isWifiEnabled = false
+    @State var userName: String = ""
     var body: some View {
-        WifiImageView(isWifiEnabled: true)
+        WifiImageView(isWifiEnabled: $isWifiEnabled)
+        Toggle(isOn: $isWifiEnabled, label: {
+            Text("Enable Wi-Fi")
+        })
+        TextField("Enter user name: ", text: $userName)
+        Text(userName)
     }
 }
 
 struct WifiImageView: View {
-    var isWifiEnabled: Bool
+    @Binding var isWifiEnabled: Bool
     var body: some View {
         Image(systemName: isWifiEnabled ? "wifi" : "wifi.slash")
     }
