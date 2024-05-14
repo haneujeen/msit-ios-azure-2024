@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E0AEC562BF353FE00DA1E19 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AEC552BF353FE00DA1E19 /* DemoData.swift */; };
+		4E0AEC582BF357E300DA1E19 /* EnvironmentObjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0AEC572BF357E300DA1E19 /* EnvironmentObjectTest.swift */; };
 		4EE8B5072BF350FA00941EF5 /* ObservableTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B5062BF350FA00941EF5 /* ObservableTestApp.swift */; };
 		4EE8B5092BF350FA00941EF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B5082BF350FA00941EF5 /* ContentView.swift */; };
 		4EE8B50B2BF350FC00941EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8B50A2BF350FC00941EF5 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		4E0AEC552BF353FE00DA1E19 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		4E0AEC572BF357E300DA1E19 /* EnvironmentObjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectTest.swift; sourceTree = "<group>"; };
 		4EE8B5032BF350FA00941EF5 /* ObservableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObservableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE8B5062BF350FA00941EF5 /* ObservableTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTestApp.swift; sourceTree = "<group>"; };
 		4EE8B5082BF350FA00941EF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				4EE8B5062BF350FA00941EF5 /* ObservableTestApp.swift */,
 				4EE8B5082BF350FA00941EF5 /* ContentView.swift */,
 				4E0AEC552BF353FE00DA1E19 /* DemoData.swift */,
+				4E0AEC572BF357E300DA1E19 /* EnvironmentObjectTest.swift */,
 				4EE8B50A2BF350FC00941EF5 /* Assets.xcassets */,
 				4EE8B50C2BF350FC00941EF5 /* Preview Content */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0AEC562BF353FE00DA1E19 /* DemoData.swift in Sources */,
+				4E0AEC582BF357E300DA1E19 /* EnvironmentObjectTest.swift in Sources */,
 				4EE8B5092BF350FA00941EF5 /* ContentView.swift in Sources */,
 				4EE8B5072BF350FA00941EF5 /* ObservableTestApp.swift in Sources */,
 			);
