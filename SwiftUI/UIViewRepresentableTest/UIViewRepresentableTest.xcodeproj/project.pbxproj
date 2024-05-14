@@ -11,6 +11,10 @@
 		4EE8B4882BF303D400941EF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B4872BF303D400941EF5 /* ContentView.swift */; };
 		4EE8B48A2BF303D600941EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8B4892BF303D600941EF5 /* Assets.xcassets */; };
 		4EE8B48D2BF303D600941EF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE8B48C2BF303D600941EF5 /* Preview Assets.xcassets */; };
+		4EE8B4952BF3043500941EF5 /* MyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B4942BF3043500941EF5 /* MyLabel.swift */; };
+		4EE8B49B2BF30ADB00941EF5 /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B49A2BF30ADA00941EF5 /* MyWebView.swift */; };
+		4EE8B49D2BF30DF700941EF5 /* MyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B49C2BF30DF700941EF5 /* MyTableView.swift */; };
+		4EE8B49F2BF32A8100941EF5 /* MyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8B49E2BF32A8100941EF5 /* MyPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		4EE8B4872BF303D400941EF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4EE8B4892BF303D600941EF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EE8B48C2BF303D600941EF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4EE8B4942BF3043500941EF5 /* MyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLabel.swift; sourceTree = "<group>"; };
+		4EE8B49A2BF30ADA00941EF5 /* MyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
+		4EE8B49C2BF30DF700941EF5 /* MyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableView.swift; sourceTree = "<group>"; };
+		4EE8B49E2BF32A8100941EF5 /* MyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				4EE8B4852BF303D400941EF5 /* UIViewRepresentableTestApp.swift */,
-				4EE8B4872BF303D400941EF5 /* ContentView.swift */,
+				4EE8B4932BF3041A00941EF5 /* Views */,
 				4EE8B4892BF303D600941EF5 /* Assets.xcassets */,
 				4EE8B48B2BF303D600941EF5 /* Preview Content */,
 			);
@@ -65,6 +73,18 @@
 				4EE8B48C2BF303D600941EF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4EE8B4932BF3041A00941EF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EE8B4872BF303D400941EF5 /* ContentView.swift */,
+				4EE8B4942BF3043500941EF5 /* MyLabel.swift */,
+				4EE8B49A2BF30ADA00941EF5 /* MyWebView.swift */,
+				4EE8B49C2BF30DF700941EF5 /* MyTableView.swift */,
+				4EE8B49E2BF32A8100941EF5 /* MyPickerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +158,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE8B4882BF303D400941EF5 /* ContentView.swift in Sources */,
+				4EE8B49D2BF30DF700941EF5 /* MyTableView.swift in Sources */,
+				4EE8B49B2BF30ADB00941EF5 /* MyWebView.swift in Sources */,
 				4EE8B4862BF303D400941EF5 /* UIViewRepresentableTestApp.swift in Sources */,
+				4EE8B49F2BF32A8100941EF5 /* MyPickerView.swift in Sources */,
+				4EE8B4952BF3043500941EF5 /* MyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
