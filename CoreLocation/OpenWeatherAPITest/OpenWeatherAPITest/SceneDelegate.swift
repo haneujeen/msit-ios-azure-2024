@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  CodableTest
+//  OpenWeatherAPITest
 //
-//  Created by 한유진 on 4/2/24.
+//  Created by 한유진 on 4/4/24.
 //
 
 import UIKit

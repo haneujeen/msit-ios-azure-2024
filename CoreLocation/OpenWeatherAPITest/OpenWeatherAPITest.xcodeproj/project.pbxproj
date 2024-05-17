@@ -7,135 +7,113 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E6694872BBCDF2400515E68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694862BBCDF2400515E68 /* AppDelegate.swift */; };
-		4E6694892BBCDF2400515E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694882BBCDF2400515E68 /* SceneDelegate.swift */; };
-		4E66948E2BBCDF2400515E68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E66948D2BBCDF2400515E68 /* Base */; };
-		4E6694902BBCDF2600515E68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E66948F2BBCDF2600515E68 /* Assets.xcassets */; };
-		4E66949C2BBCDF9D00515E68 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66949B2BBCDF9D00515E68 /* Alamofire */; };
-		4E66949E2BBCDF9D00515E68 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66949D2BBCDF9D00515E68 /* AlamofireDynamic */; };
-		4E6694C02BBCE09D00515E68 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */; };
-		4E6694C22BBCE37900515E68 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694C12BBCE37900515E68 /* Book.swift */; };
-		4E6694C62BBCF39400515E68 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4E6694C52BBCF39400515E68 /* Kingfisher */; };
-		4E6694C82BBCFE6C00515E68 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694C72BBCFE6C00515E68 /* WebViewViewController.swift */; };
-		4E6694CB2BBD1B6F00515E68 /* WebViewWithSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6694CA2BBD1B6F00515E68 /* WebViewWithSelectViewController.swift */; };
+		4E6695282BBE288A00515E68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6695272BBE288A00515E68 /* AppDelegate.swift */; };
+		4E66952A2BBE288A00515E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6695292BBE288A00515E68 /* SceneDelegate.swift */; };
+		4E66952C2BBE288A00515E68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66952B2BBE288A00515E68 /* ViewController.swift */; };
+		4E66952F2BBE288A00515E68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E66952E2BBE288A00515E68 /* Base */; };
+		4E6695312BBE288C00515E68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6695302BBE288C00515E68 /* Assets.xcassets */; };
+		4E66953D2BBE2D7B00515E68 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66953C2BBE2D7B00515E68 /* Alamofire */; };
+		4E66953F2BBE2D7B00515E68 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4E66953E2BBE2D7B00515E68 /* AlamofireDynamic */; };
+		4E6695422BBE2D8500515E68 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4E6695412BBE2D8500515E68 /* Kingfisher */; };
+		4E6695442BBE2DE000515E68 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6695432BBE2DE000515E68 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E6694832BBCDF2400515E68 /* KakaoAPITestWithAlamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoAPITestWithAlamofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E6694862BBCDF2400515E68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E6694882BBCDF2400515E68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4E66948D2BBCDF2400515E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4E66948F2BBCDF2600515E68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4E6694942BBCDF2600515E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
-		4E6694C12BBCE37900515E68 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		4E6694C72BBCFE6C00515E68 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
-		4E6694CA2BBD1B6F00515E68 /* WebViewWithSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWithSelectViewController.swift; sourceTree = "<group>"; };
+		4E6695242BBE288A00515E68 /* OpenWeatherAPITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherAPITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E6695272BBE288A00515E68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E6695292BBE288A00515E68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4E66952B2BBE288A00515E68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E66952E2BBE288A00515E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E6695302BBE288C00515E68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E6695352BBE288C00515E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E6695432BBE2DE000515E68 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4E6694802BBCDF2400515E68 /* Frameworks */ = {
+		4E6695212BBE288A00515E68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6694C62BBCF39400515E68 /* Kingfisher in Frameworks */,
-				4E66949C2BBCDF9D00515E68 /* Alamofire in Frameworks */,
-				4E66949E2BBCDF9D00515E68 /* AlamofireDynamic in Frameworks */,
+				4E6695422BBE2D8500515E68 /* Kingfisher in Frameworks */,
+				4E66953D2BBE2D7B00515E68 /* Alamofire in Frameworks */,
+				4E66953F2BBE2D7B00515E68 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E66947A2BBCDF2400515E68 = {
+		4E66951B2BBE288A00515E68 = {
 			isa = PBXGroup;
 			children = (
-				4E6694852BBCDF2400515E68 /* KakaoAPITestWithAlamofire */,
-				4E6694842BBCDF2400515E68 /* Products */,
+				4E6695262BBE288A00515E68 /* OpenWeatherAPITest */,
+				4E6695252BBE288A00515E68 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4E6694842BBCDF2400515E68 /* Products */ = {
+		4E6695252BBE288A00515E68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E6694832BBCDF2400515E68 /* KakaoAPITestWithAlamofire.app */,
+				4E6695242BBE288A00515E68 /* OpenWeatherAPITest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E6694852BBCDF2400515E68 /* KakaoAPITestWithAlamofire */ = {
+		4E6695262BBE288A00515E68 /* OpenWeatherAPITest */ = {
 			isa = PBXGroup;
 			children = (
-				4E6694C92BBD1B3800515E68 /* Controllers */,
-				4E6694C32BBCE37E00515E68 /* Models */,
-				4E6694862BBCDF2400515E68 /* AppDelegate.swift */,
-				4E6694882BBCDF2400515E68 /* SceneDelegate.swift */,
-				4E66948C2BBCDF2400515E68 /* Main.storyboard */,
-				4E66948F2BBCDF2600515E68 /* Assets.xcassets */,
-				4E6694942BBCDF2600515E68 /* Info.plist */,
+				4E6695272BBE288A00515E68 /* AppDelegate.swift */,
+				4E6695292BBE288A00515E68 /* SceneDelegate.swift */,
+				4E66952B2BBE288A00515E68 /* ViewController.swift */,
+				4E6695432BBE2DE000515E68 /* Weather.swift */,
+				4E66952D2BBE288A00515E68 /* Main.storyboard */,
+				4E6695302BBE288C00515E68 /* Assets.xcassets */,
+				4E6695352BBE288C00515E68 /* Info.plist */,
 			);
-			path = KakaoAPITestWithAlamofire;
-			sourceTree = "<group>";
-		};
-		4E6694C32BBCE37E00515E68 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4E6694C12BBCE37900515E68 /* Book.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		4E6694C92BBD1B3800515E68 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4E6694BF2BBCE09D00515E68 /* BooksTableViewController.swift */,
-				4E6694C72BBCFE6C00515E68 /* WebViewViewController.swift */,
-				4E6694CA2BBD1B6F00515E68 /* WebViewWithSelectViewController.swift */,
-			);
-			path = Controllers;
+			path = OpenWeatherAPITest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E6694822BBCDF2400515E68 /* KakaoAPITestWithAlamofire */ = {
+		4E6695232BBE288A00515E68 /* OpenWeatherAPITest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E6694972BBCDF2600515E68 /* Build configuration list for PBXNativeTarget "KakaoAPITestWithAlamofire" */;
+			buildConfigurationList = 4E6695382BBE288C00515E68 /* Build configuration list for PBXNativeTarget "OpenWeatherAPITest" */;
 			buildPhases = (
-				4E66947F2BBCDF2400515E68 /* Sources */,
-				4E6694802BBCDF2400515E68 /* Frameworks */,
-				4E6694812BBCDF2400515E68 /* Resources */,
+				4E6695202BBE288A00515E68 /* Sources */,
+				4E6695212BBE288A00515E68 /* Frameworks */,
+				4E6695222BBE288A00515E68 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KakaoAPITestWithAlamofire;
+			name = OpenWeatherAPITest;
 			packageProductDependencies = (
-				4E66949B2BBCDF9D00515E68 /* Alamofire */,
-				4E66949D2BBCDF9D00515E68 /* AlamofireDynamic */,
-				4E6694C52BBCF39400515E68 /* Kingfisher */,
+				4E66953C2BBE2D7B00515E68 /* Alamofire */,
+				4E66953E2BBE2D7B00515E68 /* AlamofireDynamic */,
+				4E6695412BBE2D8500515E68 /* Kingfisher */,
 			);
-			productName = KakaoAPITestWithAlamofire;
-			productReference = 4E6694832BBCDF2400515E68 /* KakaoAPITestWithAlamofire.app */;
+			productName = OpenWeatherAPITest;
+			productReference = 4E6695242BBE288A00515E68 /* OpenWeatherAPITest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4E66947B2BBCDF2400515E68 /* Project object */ = {
+		4E66951C2BBE288A00515E68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					4E6694822BBCDF2400515E68 = {
+					4E6695232BBE288A00515E68 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 4E66947E2BBCDF2400515E68 /* Build configuration list for PBXProject "KakaoAPITestWithAlamofire" */;
+			buildConfigurationList = 4E66951F2BBE288A00515E68 /* Build configuration list for PBXProject "OpenWeatherAPITest" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,53 +121,51 @@
 				en,
 				Base,
 			);
-			mainGroup = 4E66947A2BBCDF2400515E68;
+			mainGroup = 4E66951B2BBE288A00515E68;
 			packageReferences = (
-				4E66949A2BBCDF9D00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				4E6694C42BBCF39400515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4E66953B2BBE2D7B00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4E6695402BBE2D8500515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
-			productRefGroup = 4E6694842BBCDF2400515E68 /* Products */;
+			productRefGroup = 4E6695252BBE288A00515E68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E6694822BBCDF2400515E68 /* KakaoAPITestWithAlamofire */,
+				4E6695232BBE288A00515E68 /* OpenWeatherAPITest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4E6694812BBCDF2400515E68 /* Resources */ = {
+		4E6695222BBE288A00515E68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6694902BBCDF2600515E68 /* Assets.xcassets in Resources */,
-				4E66948E2BBCDF2400515E68 /* Base in Resources */,
+				4E6695312BBE288C00515E68 /* Assets.xcassets in Resources */,
+				4E66952F2BBE288A00515E68 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4E66947F2BBCDF2400515E68 /* Sources */ = {
+		4E6695202BBE288A00515E68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6694C82BBCFE6C00515E68 /* WebViewViewController.swift in Sources */,
-				4E6694C22BBCE37900515E68 /* Book.swift in Sources */,
-				4E6694CB2BBD1B6F00515E68 /* WebViewWithSelectViewController.swift in Sources */,
-				4E6694872BBCDF2400515E68 /* AppDelegate.swift in Sources */,
-				4E6694892BBCDF2400515E68 /* SceneDelegate.swift in Sources */,
-				4E6694C02BBCE09D00515E68 /* BooksTableViewController.swift in Sources */,
+				4E6695442BBE2DE000515E68 /* Weather.swift in Sources */,
+				4E66952C2BBE288A00515E68 /* ViewController.swift in Sources */,
+				4E6695282BBE288A00515E68 /* AppDelegate.swift in Sources */,
+				4E66952A2BBE288A00515E68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4E66948C2BBCDF2400515E68 /* Main.storyboard */ = {
+		4E66952D2BBE288A00515E68 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E66948D2BBCDF2400515E68 /* Base */,
+				4E66952E2BBE288A00515E68 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -197,7 +173,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4E6694952BBCDF2600515E68 /* Debug */ = {
+		4E6695362BBE288C00515E68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,7 +236,7 @@
 			};
 			name = Debug;
 		};
-		4E6694962BBCDF2600515E68 /* Release */ = {
+		4E6695372BBE288C00515E68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,7 +292,7 @@
 			};
 			name = Release;
 		};
-		4E6694982BBCDF2600515E68 /* Debug */ = {
+		4E6695392BBE288C00515E68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -324,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KakaoAPITestWithAlamofire/Info.plist;
+				INFOPLIST_FILE = OpenWeatherAPITest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -335,7 +311,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KakaoAPITestWithAlamofire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenWeatherAPITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,7 +319,7 @@
 			};
 			name = Debug;
 		};
-		4E6694992BBCDF2600515E68 /* Release */ = {
+		4E66953A2BBE288C00515E68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -351,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KakaoAPITestWithAlamofire/Info.plist;
+				INFOPLIST_FILE = OpenWeatherAPITest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,7 +338,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KakaoAPITestWithAlamofire;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenWeatherAPITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -373,20 +349,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E66947E2BBCDF2400515E68 /* Build configuration list for PBXProject "KakaoAPITestWithAlamofire" */ = {
+		4E66951F2BBE288A00515E68 /* Build configuration list for PBXProject "OpenWeatherAPITest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E6694952BBCDF2600515E68 /* Debug */,
-				4E6694962BBCDF2600515E68 /* Release */,
+				4E6695362BBE288C00515E68 /* Debug */,
+				4E6695372BBE288C00515E68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E6694972BBCDF2600515E68 /* Build configuration list for PBXNativeTarget "KakaoAPITestWithAlamofire" */ = {
+		4E6695382BBE288C00515E68 /* Build configuration list for PBXNativeTarget "OpenWeatherAPITest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E6694982BBCDF2600515E68 /* Debug */,
-				4E6694992BBCDF2600515E68 /* Release */,
+				4E6695392BBE288C00515E68 /* Debug */,
+				4E66953A2BBE288C00515E68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -394,7 +370,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4E66949A2BBCDF9D00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		4E66953B2BBE2D7B00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -402,7 +378,7 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		4E6694C42BBCF39400515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		4E6695402BBE2D8500515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -413,22 +389,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4E66949B2BBCDF9D00515E68 /* Alamofire */ = {
+		4E66953C2BBE2D7B00515E68 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E66949A2BBCDF9D00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4E66953B2BBE2D7B00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		4E66949D2BBCDF9D00515E68 /* AlamofireDynamic */ = {
+		4E66953E2BBE2D7B00515E68 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E66949A2BBCDF9D00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4E66953B2BBE2D7B00515E68 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
 		};
-		4E6694C52BBCF39400515E68 /* Kingfisher */ = {
+		4E6695412BBE2D8500515E68 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E6694C42BBCF39400515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 4E6695402BBE2D8500515E68 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 4E66947B2BBCDF2400515E68 /* Project object */;
+	rootObject = 4E66951C2BBE288A00515E68 /* Project object */;
 }

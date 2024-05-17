@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,12 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="9MZ-vE-YGH">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="mIa-xr-IxZ" id="ajy-g4-D3W"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="mZG-oX-ufn">
-                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="mZG-oX-ufn">
+                                <rect key="frame" x="0.0" y="94" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mZG-oX-ufn" id="P8r-Pp-1CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-UH-riB">
@@ -50,6 +59,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="c2v-lQ-8PA" kind="show" identifier="ToWebView" trigger="accessoryAction" id="j9a-vO-0OQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -57,11 +69,83 @@
                             <outlet property="delegate" destination="mIa-xr-IxZ" id="9ws-Cz-ogU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4yP-tN-BYs"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="4yP-tN-BYs">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left.fill" catalog="system" id="Uoa-Z5-xDf">
+                            <connections>
+                                <action selector="previousAction:" destination="mIa-xr-IxZ" id="kwb-Xo-K6x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrowshape.turn.up.right.fill" catalog="system" id="S8q-hs-C6C">
+                            <connections>
+                                <action selector="nextAction:" destination="mIa-xr-IxZ" id="CQS-dN-fnz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="leftBarButton" destination="Uoa-Z5-xDf" id="yT4-0S-oQn"/>
+                        <outlet property="rightBarButton" destination="S8q-hs-C6C" id="CLd-Dh-P9M"/>
+                        <outlet property="searchBar" destination="9MZ-vE-YGH" id="AGz-Nd-TOg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOA-yV-dLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481.67938931297709" y="17.605633802816904"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="iHE-Rq-xeD">
+            <objects>
+                <viewController id="c2v-lQ-8PA" customClass="WebViewViewController" customModule="KakaoAPITestWithAlamofire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YhT-HW-1M6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prz-Kd-Z9h">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wp0-hN-cQu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pvq-3i-W45"/>
+                    <connections>
+                        <outlet property="webView" destination="Prz-Kd-Z9h" id="J4o-3a-MjM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKA-3L-wMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1269" y="18"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eak-Ep-2CW">
+            <objects>
+                <viewController storyboardIdentifier="controller" id="Wui-ha-AJO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3XA-Rc-VRo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gy-KB-b9Q">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CfJ-2C-oOD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5t-mw-t6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1267.9389312977098" y="725.35211267605632"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VgG-Zt-Olu">
@@ -81,6 +165,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

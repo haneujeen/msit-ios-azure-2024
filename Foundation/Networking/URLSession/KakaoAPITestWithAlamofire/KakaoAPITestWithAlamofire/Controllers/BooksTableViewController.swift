@@ -10,18 +10,22 @@ import Alamofire
 import Kingfisher
 
 class BooksTableViewController: UITableViewController {
-    let apiKey = "KakaoAK ec21690271bdc78663d5780d97cae11d"
+    let apiKey = ProcessInfo.processInfo.environment["apiKey"] ?? ""
     var books: [Document]?
+    var isEnd: Bool?
+    var page = 0 {
+        didSet {
+            leftBarButton.isEnabled = page > 1
+            createTask(query: searchBar.text, page: page)
+        }
+    }
+    
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        createTask(query: "af", page: 1)
     }
     
     func createTask(query: String?, page: Int) {
@@ -29,16 +33,20 @@ class BooksTableViewController: UITableViewController {
         
         let endpoint = "https://dapi.kakao.com/v3/search/book"
         let params: Parameters = ["query": query, "page": page, "size": 8]
-        let headers: HTTPHeaders = ["Authorization": apiKey]
+        let headers: HTTPHeaders = ["Authorization": "KakaoAK \(apiKey)"]
         let alamo = AF.request(endpoint, method: .get, parameters: params, headers: headers)
         
         alamo.responseDecodable(of: Root.self) { response in
             switch response.result {
-            case .success(let root):
+            case .success(let root): // .success(Root): Result<Root, AFError>
                 self.books = root.documents
+                self.isEnd = root.meta.isEnd
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.rightBarButton.isEnabled = !(self.isEnd ?? false)
                 }
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -50,6 +58,14 @@ class BooksTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func previousAction(_ sender: Any) {
+        page -= 1
+    }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        page += 1
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,52 +94,35 @@ class BooksTableViewController: UITableViewController {
         authorsLabel?.text = book?.authors.joined(separator: ", ")
         priceLabel?.text = "\((book?.price)!)"
         
+        cell.accessoryType = .detailDisclosureButton
+        
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToWebView", sender: indexPath)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToWebView" {
+            // Get the new view controller using segue.destination.
+            guard let controller = segue.destination as? WebViewViewController else { return }
+            
+            // Pass the selected object to the new view controller.
+            guard let indexPath = sender as? IndexPath,
+                  let book = books?[indexPath.row] else { return }
+                  
+            controller.url = URL(string: book.url)
+        }
     }
-    */
+}
 
+extension BooksTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        page = 1
+        searchBar.resignFirstResponder()
+    }
 }
