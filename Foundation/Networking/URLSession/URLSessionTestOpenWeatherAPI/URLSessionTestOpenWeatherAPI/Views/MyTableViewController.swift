@@ -44,12 +44,14 @@ class MyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let forecast = forecasts?[indexPath.row],
-              let weather = forecast["weather"] as? [[String: Any]]
+              let weather = forecast["weather"] as? [[String: Any]],
+              let temperatureItem = forecast["main"] as? [String: Any]
         else { return cell }
         
         // Configure the cell...
         let description = weather[0]["description"] as? String
         let icon = weather[0]["icon"] as? String
+        let temperature = temperatureItem["temp"] as? Double
         
         if let icon, let url = URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png") {
             ImageDownloader.shared.downloadImage(from: url) { image in
@@ -60,6 +62,15 @@ class MyTableViewController: UITableViewController {
         
         let descriptionLabel = cell.viewWithTag(2) as? UILabel
         descriptionLabel?.text = description ?? ""
+        
+        let captionLabel = cell.viewWithTag(3) as? UILabel
+        if let linuxTime = forecast["dt"] as? TimeInterval, let temperature {
+            let swiftDate = Date(timeIntervalSince1970: linuxTime)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM-dd HH:mm"
+            captionLabel?.text = "\(temperature)/\(formatter.string(from: swiftDate))"
+        }
+        
         return cell
     }
     
