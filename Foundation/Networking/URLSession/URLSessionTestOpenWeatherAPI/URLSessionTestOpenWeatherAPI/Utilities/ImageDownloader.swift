@@ -11,7 +11,14 @@ class ImageDownloader {
     static let shared = ImageDownloader()
     private init() {}
     
+    private let cache = NSCache<NSURL, UIImage>()
+    
     func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        if let cachedImage = cache.object(forKey: url as NSURL) {
+            completion(cachedImage)
+            return
+        }
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -22,6 +29,7 @@ class ImageDownloader {
                 completion(nil)
                 return
             }
+            self.cache.setObject(image, forKey: url as NSURL)
             DispatchQueue.main.async {
                 completion(image)
             }
