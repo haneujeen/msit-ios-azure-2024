@@ -8,7 +8,6 @@
 import UIKit
 
 class MyTableViewController: UITableViewController {
-    let APIKey = ProcessInfo.processInfo.environment["APIKey"] ?? ""
     var forecasts: [[String:Any]]?
     
     override func viewDidLoad() {
@@ -18,6 +17,9 @@ class MyTableViewController: UITableViewController {
     }
     
     func fetchForecasts() {
+        guard let config = Bundle.main.object(forInfoDictionaryKey: "Config") as? [String: String],
+              let APIKey = config["APIKey"] else { return }
+        
         let endpoint = "https://api.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=\(APIKey)"
         NetworkManager.shared.fetchData(from: endpoint) { result in
             switch result {
