@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyTableViewController: UITableViewController {
-    var forecasts: [[String:Any]]?
+    var forecasts: [Forecast]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,14 @@ class MyTableViewController: UITableViewController {
         NetworkManager.shared.fetchData(from: endpoint) { result in
             switch result {
             case .success(let data):
-                if let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    self.forecasts = dict["list"] as? [[String: Any]]
+                do {
+                    let root = try JSONDecoder().decode(Root.self, from: data)
+                    self.forecasts = root.forecasts
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                } catch {
+                    print("Decoding error: \(error)")
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -43,33 +47,36 @@ class MyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let forecast = forecasts?[indexPath.row],
-              let weather = forecast["weather"] as? [[String: Any]],
-              let temperatureItem = forecast["main"] as? [String: Any]
-        else { return cell }
+        guard let forecast = forecasts?[indexPath.row] else { return cell }
         
         // Configure the cell...
-        let description = weather[0]["description"] as? String
-        let icon = weather[0]["icon"] as? String
-        let temperature = temperatureItem["temp"] as? Double
-        
-        if let icon, let url = URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png") {
-            ImageDownloader.shared.downloadImage(from: url) { image in
-                let iconImageView = cell.viewWithTag(1) as? UIImageView
-                iconImageView?.image = image
+        if let iconCode = forecast.weather.first?.iconCode,
+           let url = URL(string: "https://openweathermap.org/img/wn/\(iconCode)@2x.png") {
+            let iconImageView = cell.viewWithTag(1) as? UIImageView
+            if let cachedImage = ImageCacheManager.shared.object(forKey: url as NSURL) {
+                iconImageView?.image = cachedImage
+            } else {
+                iconImageView?.kf.setImage(with: url, completionHandler: { result in
+                    switch result {
+                    case .success(let value):
+                        ImageCacheManager.shared.setObject(value.image, forKey: url as NSURL)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                })
             }
         }
         
         let descriptionLabel = cell.viewWithTag(2) as? UILabel
-        descriptionLabel?.text = description ?? ""
+        descriptionLabel?.text = forecast.weather.first?.description
         
         let captionLabel = cell.viewWithTag(3) as? UILabel
-        if let linuxTime = forecast["dt"] as? TimeInterval, let temperature {
-            let swiftDate = Date(timeIntervalSince1970: linuxTime)
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd HH:mm"
-            captionLabel?.text = "\(temperature)/\(formatter.string(from: swiftDate))"
-        }
+        let linuxTime = forecast.dateTime
+        let timeInterval = TimeInterval(linuxTime)
+        let swiftDate = Date(timeIntervalSince1970: timeInterval)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd HH:mm"
+        captionLabel?.text = "\(formatter.string(from: swiftDate))"
         
         return cell
     }

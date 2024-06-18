@@ -6,25 +6,31 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyViewController: UIViewController {
-    var forecast: [String:Any]?
+    var forecast: Forecast?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let forecast,
-              let weather = forecast["weather"] as? [[String: Any]]
-        else { return }
+        guard let forecast else { return }
         
-        let description = weather[0]["description"] as? String
-        let icon = weather[0]["icon"] as? String
-        
-        if let icon, let url = URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png") {
-            ImageDownloader.shared.downloadImage(from: url) { image in
-                self.iconImageView.image = image
+        if let iconCode = forecast.weather.first?.iconCode,
+           let url = URL(string: "https://openweathermap.org/img/wn/\(iconCode)@2x.png") {
+            if let cachedImage = ImageCacheManager.shared.object(forKey: url as NSURL) {
+                iconImageView?.image = cachedImage
+            } else {
+                iconImageView?.kf.setImage(with: url, completionHandler: { result in
+                    switch result {
+                    case .success(let value):
+                        ImageCacheManager.shared.setObject(value.image, forKey: url as NSURL)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                })
             }
         }
-        descriptionLabel.text = description
+        descriptionLabel.text = forecast.weather.first?.description
     }
     
     @IBOutlet weak var iconImageView: UIImageView!

@@ -13,7 +13,10 @@
 		4E11817E2C200D6E007D335B /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11817D2C200D6E007D335B /* MyViewController.swift */; };
 		4E1181802C200D7D007D335B /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11817F2C200D7D007D335B /* MyTableViewController.swift */; };
 		4E1181832C200F31007D335B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1181822C200F31007D335B /* NetworkManager.swift */; };
-		4E1181862C20100F007D335B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1181852C20100F007D335B /* ImageDownloader.swift */; };
+		4E1181892C201293007D335B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1181882C201293007D335B /* Forecast.swift */; };
+		4E11818F2C202F22007D335B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4E11818E2C202F22007D335B /* Kingfisher */; };
+		4E9CEF4C2C210B0700E4004B /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CEF4B2C210B0700E4004B /* ImageCacheManager.swift */; };
+		4E9CEF4F2C210D8300E4004B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4E9CEF4E2C210D8300E4004B /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,9 @@
 		4E11817D2C200D6E007D335B /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		4E11817F2C200D7D007D335B /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		4E1181822C200F31007D335B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		4E1181852C20100F007D335B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		4E1181882C201293007D335B /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		4E11818C2C201AC5007D335B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		4E9CEF4B2C210B0700E4004B /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E11818F2C202F22007D335B /* Kingfisher in Frameworks */,
+				4E9CEF4F2C210D8300E4004B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +65,11 @@
 		4E1181682C200CA3007D335B /* URLSessionTestOpenWeatherAPI */ = {
 			isa = PBXGroup;
 			children = (
+				4E11818C2C201AC5007D335B /* Config.xcconfig */,
 				4E1181692C200CA3007D335B /* AppDelegate.swift */,
 				4E11816B2C200CA3007D335B /* SceneDelegate.swift */,
 				4E1181842C200FEF007D335B /* Utilities */,
+				4E1181872C201256007D335B /* Model */,
 				4E1181812C200D84007D335B /* Views */,
 				4E11816F2C200CA3007D335B /* Main.storyboard */,
 				4E1181772C200CA4007D335B /* Info.plist */,
@@ -81,9 +90,17 @@
 			isa = PBXGroup;
 			children = (
 				4E1181822C200F31007D335B /* NetworkManager.swift */,
-				4E1181852C20100F007D335B /* ImageDownloader.swift */,
+				4E9CEF4B2C210B0700E4004B /* ImageCacheManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4E1181872C201256007D335B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E1181882C201293007D335B /* Forecast.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +119,10 @@
 			dependencies = (
 			);
 			name = URLSessionTestOpenWeatherAPI;
+			packageProductDependencies = (
+				4E11818E2C202F22007D335B /* Kingfisher */,
+				4E9CEF4E2C210D8300E4004B /* Alamofire */,
+			);
 			productName = URLSessionTestOpenWeatherAPI;
 			productReference = 4E1181662C200CA3007D335B /* URLSessionTestOpenWeatherAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +151,10 @@
 				Base,
 			);
 			mainGroup = 4E11815D2C200CA3007D335B;
+			packageReferences = (
+				4E11818D2C202F22007D335B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4E9CEF4D2C210D8300E4004B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4E1181672C200CA3007D335B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,9 +182,10 @@
 			files = (
 				4E11816A2C200CA3007D335B /* AppDelegate.swift in Sources */,
 				4E11817E2C200D6E007D335B /* MyViewController.swift in Sources */,
+				4E1181892C201293007D335B /* Forecast.swift in Sources */,
 				4E1181832C200F31007D335B /* NetworkManager.swift in Sources */,
+				4E9CEF4C2C210B0700E4004B /* ImageCacheManager.swift in Sources */,
 				4E11816C2C200CA3007D335B /* SceneDelegate.swift in Sources */,
-				4E1181862C20100F007D335B /* ImageDownloader.swift in Sources */,
 				4E1181802C200D7D007D335B /* MyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +206,7 @@
 /* Begin XCBuildConfiguration section */
 		4E1181782C200CA4007D335B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E11818C2C201AC5007D335B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -373,6 +400,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E11818D2C202F22007D335B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		4E9CEF4D2C210D8300E4004B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E11818E2C202F22007D335B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E11818D2C202F22007D335B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		4E9CEF4E2C210D8300E4004B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E9CEF4D2C210D8300E4004B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E11815E2C200CA3007D335B /* Project object */;
 }
