@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Alamofire
 
 class MyTableViewController: UITableViewController {
     var forecasts: [Forecast]?
@@ -14,7 +15,7 @@ class MyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Forecasts"
-        fetchForecasts()
+        fetchForecastsAF()
     }
     
     func fetchForecasts() {
@@ -38,6 +39,25 @@ class MyTableViewController: UITableViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func fetchForecastsAF() {
+        guard let config = Bundle.main.object(forInfoDictionaryKey: "Config") as? [String: String],
+              let APIKey = config["APIKey"] else { return }
+        let endpoint = "https://api.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=\(APIKey)"
+        
+        AF.request(endpoint)
+            .responseDecodable(of: Root.self) { response in
+                switch response.result {
+                case .success(let root):
+                    self.forecasts = root.forecasts
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
     }
     
     // MARK: - Table view data source
